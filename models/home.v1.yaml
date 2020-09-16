@@ -1,0 +1,11 @@
+title: home
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+x-examples:
+  example-1:
+    id: '12345'
+    name: Home

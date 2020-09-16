@@ -1,0 +1,131 @@
+openapi: 3.0.0
+info:
+  title: MRtest
+  version: '1.0'
+  description: Test
+  contact:
+    name: eugene
+  license:
+    name: MIT
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /home:
+    get:
+      summary: home page
+      tags:
+        - Home Page
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Today Special:
+                    type: string
+              examples:
+                example:
+                  value:
+                    Today Special: string
+      operationId: get-home
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+          required: true
+          description: The OAuth 2.0 bearer tokens.
+        - schema:
+            type: integer
+          in: header
+          name: X-Pagination-Limit
+          description: Maximum number of results. Default 10
+        - schema:
+            type: string
+          in: query
+          name: q
+          description: 'Rsql queries for searchable fields, see RSQL.'
+          required: true
+      description: get the info from Home Page
+  '/signup/{name}':
+    post:
+      summary: signup
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  guid:
+                    type: string
+              examples:
+                example:
+                  value:
+                    guid: 1124kjlkjlkl8989
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Message:
+                    type: string
+              examples:
+                example:
+                  value:
+                    Message: Error
+      operationId: post-signup
+      description: user sign up
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                phone:
+                  type: number
+            examples:
+              example:
+                value:
+                  name: Tom Hanks
+                  email: littleTom@gmail.com
+                  phone: 453211111
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: id
+          required: true
+    parameters:
+      - schema:
+          type: string
+        name: name
+        in: path
+        required: true
+components:
+  schemas: {}
+  securitySchemes:
+    API Key - 1:
+      name: API Key
+      type: apiKey
+      in: query
+tags:
+  - name: Home Page
