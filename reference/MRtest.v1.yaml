@@ -2,19 +2,26 @@ openapi: 3.0.0
 info:
   title: MRtest
   version: '1.0'
-  description: Test
+  description: |-
+    **How to send request**
+
+    ```bash
+    curl --request GET \
+      --url 'http://localhost:8080/home?q=' \
+      --header 'authorization: '
+
+    ```
   contact:
     name: eugene
   license:
     name: MIT
 servers:
   - url: 'http://localhost:8080'
+    description: Local Computer
 paths:
   /home:
     get:
       summary: home page
-      tags:
-        - Home Page
       responses:
         '200':
           description: OK
@@ -49,10 +56,11 @@ paths:
           description: 'Rsql queries for searchable fields, see RSQL.'
           required: true
       description: get the info from Home Page
+      tags:
+        - Home Page
   '/signup/{name}':
     post:
       summary: signup
-      tags: []
       responses:
         '200':
           description: OK
@@ -114,6 +122,8 @@ paths:
           in: query
           name: id
           required: true
+      tags:
+        - Signup
     parameters:
       - schema:
           type: string
@@ -128,4 +138,5 @@ components:
       type: apiKey
       in: query
 tags:
+  - name: Signup
   - name: Home Page
