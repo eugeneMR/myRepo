@@ -1,3 +1,11 @@
-# doc
+# MRtest API
 
-The beginning of an awesome article...
+##### How to send a request:
+
+
+```bash
+curl --request GET \
+  --url 'http://localhost:8080/home?q=' \
+  --header 'authorization: '
+
+```
