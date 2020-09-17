@@ -71,10 +71,13 @@ paths:
                 properties:
                   guid:
                     type: string
+                  message:
+                    type: string
               examples:
                 example:
                   value:
                     guid: 1124kjlkjlkl8989
+                    message: Success
         '400':
           description: Bad Request
           content:
@@ -122,6 +125,7 @@ paths:
           in: query
           name: id
           required: true
+          description: user id
       tags:
         - Signup
     parameters:
@@ -130,6 +134,7 @@ paths:
         name: name
         in: path
         required: true
+        description: user name
 components:
   schemas: {}
   securitySchemes:
