@@ -110,7 +110,7 @@ paths:
                 value:
                   name: Tom Hanks
                   email: littleTom@gmail.com
-                  phone: 453211111
+                  phone: 53211111
           application/xml:
             schema:
               type: object
