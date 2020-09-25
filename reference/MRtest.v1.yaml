@@ -136,12 +136,6 @@ paths:
         in: path
         required: true
         description: user name
-  /user:
-    get:
-      summary: get users
-      tags: []
-      responses: {}
-      operationId: get-user
 components:
   schemas: {}
   securitySchemes:
