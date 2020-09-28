@@ -136,6 +136,67 @@ paths:
         in: path
         required: true
         description: user name
+  '/users/{userName}':
+    post:
+      summary: user post
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                example:
+                  value:
+                    message: success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                example-1:
+                  value:
+                    '': Error
+      operationId: post-users
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: par1
+          description: par 1
+        - schema:
+            type: string
+          in: query
+          name: par2
+          description: par 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ''
+            examples:
+              example:
+                value:
+                  userName: Tim
+                  phoneNumber: 1234566
+      description: user name endpoint
+    parameters:
+      - schema:
+          type: string
+        name: userName
+        in: path
+        required: true
+        description: user name
 components:
   schemas: {}
   securitySchemes:
