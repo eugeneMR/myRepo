@@ -197,6 +197,58 @@ paths:
         in: path
         required: true
         description: user name
+  '/comp/{name}':
+    get:
+      summary: get company info
+      tags:
+        - Company
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/company.v1.yaml
+              examples:
+                example:
+                  value:
+                    name: medirecords
+                    address: '456 pitt st, sydney NSW2000'
+                    tel: 123456
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                example:
+                  value:
+                    message: invalid
+      operationId: get-comp
+      description: Get company info
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Token
+          description: token
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: name
+          description: name
+    parameters:
+      - schema:
+          type: string
+        name: name
+        in: path
+        required: true
+        description: Company Name
 components:
   schemas: {}
   securitySchemes:

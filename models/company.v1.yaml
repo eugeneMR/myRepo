@@ -1,0 +1,16 @@
+title: company
+type: object
+x-tags:
+  - Company
+description: this is company info
+properties:
+  name:
+    type: string
+  address:
+    type: string
+  tel:
+    type: number
+required:
+  - name
+  - address
+  - tel
