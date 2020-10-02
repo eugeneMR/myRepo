@@ -1,3 +1,0 @@
-# second
-
-The beginning of an awesome article...

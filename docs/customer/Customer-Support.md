@@ -1,7 +1,7 @@
 ---
-tags: [User start]
+tags: [Customer]
 ---
 
-# how-to-start
+# Customer Support
 
 The beginning of an awesome article...
