@@ -1,3 +1,7 @@
+---
+tags: [Getting Start]
+---
+
 # Getting Started with MRtest APIs
 
 #### **Get an Authorization Key**
