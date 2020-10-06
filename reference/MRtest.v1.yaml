@@ -36,6 +36,13 @@ paths:
                 example:
                   value:
                     Today Special: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
       operationId: get-home
       parameters:
         - schema:
@@ -55,7 +62,7 @@ paths:
           name: q
           description: 'Rsql queries for searchable fields, see RSQL.'
           required: true
-      description: get the info from Home Page
+      description: 'get the info from Home Page '
       tags:
         - Home Page
   '/signup/{name}':
